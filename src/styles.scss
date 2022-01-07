@@ -1,1 +1,704 @@
 /* You can add global styles to this file, and also import other style files */
+
+$type1-light: 'ubuntu-light',
+sans-serif;
+$type1-regular: 'ubuntu-regular',
+sans-serif;
+$type1-medium: 'ubuntu-medium',
+sans-serif;
+$type1-bold: 'ubuntu-bold',
+sans-serif;
+$navbar-height: 70px;
+$navbar-bg: #fff;
+$navbar-menu-color: #9c9fa6;
+$navbar-font-size: .875rem;
+$navbar-icon-font-size: 1.25rem;
+$sidebar-width-lg: 260px;
+$sidebar-width-mini: 185px;
+$sidebar-width-icon: 70px;
+$sidebar-bg: white;
+$sidebar-menu-color: #3e4b5b;
+$sidebar-submenu-color: #888;
+$sidebar-menu-active-bg: white;
+$sidebar-menu-active-color: white;
+$sidebar-menu-hover-bg: darken($sidebar-bg, 1%);
+$sidebar-menu-hover-color: darken($sidebar-menu-color, 10%);
+$sidebar-submenu-hover-color: darken($sidebar-submenu-color, 20%);
+$sidebar-menu-icon-color: black;
+$sidebar-menu-arrow-color: #9e9da0;
+$sidebar-menu-border-color: #f2edf3;
+$default-font-size: .875rem; // 14px as base font size
+$sidebar-menu-font-size: $default-font-size;
+$sidebar-menu-padding-y: 1.125rem;
+$sidebar-menu-padding-x: 2.25rem;
+$sidebar-submenu-font-size: .8125rem;
+$sidebar-submenu-item-padding: .75rem 2rem .75rem 2rem;
+$sidebar-icon-font-size: 1.125rem;
+$sidebar-arrow-font-size: .625rem;
+$sidebar-profile-bg: transparent;
+$sidebar-profile-padding: .75rem 1.625rem .75rem 1.188rem;
+$sidebar-icon-only-menu-padding: .5rem 1.625rem .5rem 1.188rem;
+$sidebar-icon-only-submenu-padding: 0 0 0 1.5rem;
+$icon-only-collapse-width: 190px;
+$icon-only-menu-bg-light: $sidebar-bg;
+$content-bg: #F5F6FA;
+$footer-bg: $content-bg;
+$footer-color: color(dark);
+$border-color: #ebedf2;
+///////// BUTTONS ////////
+$button-fixed-width: auto;
+$btn-padding-y: .875rem;
+$btn-padding-x: 2.5rem;
+$btn-line-height: 1;
+$btn-padding-y-xs: .25rem;
+$btn-padding-x-xs: .75rem;
+$btn-padding-y-sm: .50rem;
+$btn-padding-x-sm: .81rem;
+$btn-padding-y-lg: 1rem;
+$btn-padding-x-lg: 3rem;
+$btn-font-size: .875rem;
+$btn-font-size-xs: .625rem;
+$btn-font-size-sm: .675rem;
+$btn-font-size-lg: .875rem;
+$btn-border-radius: .1875rem;
+$btn-border-radius-xs: .1875rem;
+$btn-border-radius-sm: .1875rem;
+$btn-border-radius-lg: .1875rem;
+///////// BUTTONS ////////
+
+/* Importing Bootstrap SCSS file. */
+
+@import '~bootstrap/scss/bootstrap';
+
+/* === Icon fonts === */
+
+@import "~@mdi/font/scss/materialdesignicons";
+
+/* Miscellanoeous */
+
+body,
+html {
+    // overflow-x: hidden;
+    padding-right: 0 !important; // resets padding right added by Bootstrap modal
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+*:-moz-full-screen,
+*:-webkit-full-screen,
+*:fullscreen *:-ms-fullscreen {
+    overflow: auto;
+}
+
+
+.h-100 {
+  min-height: calc(91vh - #{$navbar-height});
+  overflow-x: scroll;
+}
+
+.page-body-wrapper {
+    min-height: calc(100vh - #{$navbar-height});
+    padding-top: $navbar-height;
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 0;
+    &.full-page-wrapper {
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 0;
+    }
+}
+
+.main-panel {
+    width: calc(100% - #{$sidebar-width-lg});
+    min-height: calc(100vh - #{$navbar-height});
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 991px) {
+        margin-left: 0;
+        width: 100%;
+    }
+    &.main-panel-only {
+        $sidebar-width-lg: 100px;
+        transition: none;
+    }
+}
+
+.content-wrapper {
+    background: $content-bg;
+    padding: 2.05rem 2.05rem;
+    width: 100%;
+}
+
+.container-scroller {
+    overflow: hidden;
+}
+
+pre {
+    background: color(gray-lighter);
+    padding: 15px;
+    font-size: 14px;
+}
+
+code {
+    padding: 5px;
+    color: theme-color(danger);
+    font-family: $type1-light;
+    font-size: $default-font-size;
+    border-radius: 4px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin: 0 0 1.5rem 0;
+    .breadcrumb {
+        border: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+.page-title {
+    color: $black;
+    font-size: 1.125rem;
+    margin-bottom: 0;
+    .page-title-icon {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 3px 8.3px 0.7px rgba(163, 93, 255, 0.35);
+        i {
+            font-size: .9375rem;
+            line-height: 36px;
+        }
+    }
+}
+
+.firstCard {
+  // height: 138px;
+  opacity: 1;
+  border-radius: 30px;
+  min-width: 340px;
+  border: none;
+  background-color: #2994FF;
+  padding: 10px;
+}
+
+.currency {
+  font-size: 15px;
+  font-weight: 400;
+  color: #979797;
+}
+
+.logo {
+  // background: transparent url('img/2000px-Mastercard-logo.svg.png') 0% 0% no-repeat padding-box;
+  opacity: 1;
+}
+
+.cardno {
+  font-weight: 300;
+  font-size: 17px;
+  margin-top: 35px;
+  font-style: Helvetica;
+  letter-spacing: 1.44px;
+  color: #979797;
+  opacity: 1;
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 2.04px;
+}
+
+.creditCard {
+  min-width: 286.5px;
+  border: none;
+  background: transparent linear-gradient(0deg, #2C2C2C 0%, #373737 100%) 0% 0% no-repeat padding-box;
+  box-shadow: 0px 15px 15px #0000000D;
+  border-radius: 20px;
+  opacity: 1;
+  padding: 10px;
+}
+
+.fundbtn {
+  width: 130px;
+  font-size: small;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  color: #00217B;
+  border-radius: 3px;
+  align-self: flex-start;
+  margin: 5px;
+  opacity: 1;
+}
+
+.titl {
+  font-size: 12px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.titl2 {
+  font-size: 14px;
+  letter-spacing: 0px;
+  color: #979797;;
+  opacity: 1;
+}
+
+.spaced {
+  margin: auto;
+  margin-top: 20px;
+  .btn {
+    padding: 10px 0px;
+  }
+}
+
+
+.withdrawbtn {
+  align-self: flex-end;
+  width: 130px;
+  margin: 5px;
+  font-size: small;
+  color: #FFFFFF;
+  border: 0.5px solid #FFFFFF;
+  border-radius: 3px;
+  opacity: 1;
+}
+
+.secondCard {
+  margin-top: 40px;
+  box-shadow: 0px 15px 15px #0000000D;
+  border-radius: 20px;
+  opacity: 1;
+  border: none;
+}
+
+.flexRow {
+  overflow-x: hidden;
+  overflow-x: auto;
+  margin-bottom: 20px;
+  flex-wrap: nowrap;
+}
+
+select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.mydot {
+  background: #EBC315;
+  border-radius: 50%;
+  display: inline-block;
+  height: 15px;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 15px;
+}
+
+.mydot2 {
+  background: #27AE60;
+  border-radius: 50%;
+  display: inline-block;
+  height: 15px;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 15px;
+}
+
+.mydot3 {
+  background: #7F8FA4;
+  border-radius: 50%;
+  display: inline-block;
+  height: 35px;
+  margin-left: 4px;
+  margin-right: 4px;
+  width: 35px;
+  color: white;
+}
+
+.rownew {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 0;
+  border: none;
+  padding: 10px;
+}
+
+.mxcard {
+border-radius: 15px;
+box-shadow: 0px 10px 15px #00000008;
+border-radius: 20px;
+opacity: 1;
+min-height: 50vh;
+}
+
+.row3 {
+  // display: flex;
+  // flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-right: -30px;
+  margin-left: -30px;
+  font-size: 0.875rem;
+}
+
+.grid-margin::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.grid-margin {
+-ms-overflow-style: none;
+scrollbar-width: none; /* Firefox */
+}
+
+.colnew {
+  position: relative;
+  width: 100%;
+}
+
+.rounded-legend {
+  ul {
+      padding-left: 0;
+      margin-bottom: 0;
+      li {
+          list-style-type: none;
+          color: $text-muted;
+          font-size: .75rem;
+          .legend-dots {
+              width: 1rem;
+              height: 1rem;
+              border-radius: 100%;
+              display: inline-block;
+              vertical-align: text-bottom;
+              margin-right: .5rem;
+              .rtl & {
+                  margin-left: .5rem;
+              }
+          }
+      }
+  }
+  &.legend-horizontal {
+      display: flex;
+      ul {
+          li {
+              display: inline-block;
+              margin-right: 1.5rem;
+              .rtl & {
+                  margin-right: auto;
+                  margin-left: 1.5rem;
+              }
+          }
+      }
+  }
+  &.legend-vertical {
+      ul {
+          li {
+              margin-top: 1rem;
+              &:first-child {
+                  margin-top: 0;
+              }
+          }
+      }
+  }
+}
+
+#visit-sale-chart-legend {
+  ul {
+      li {
+          &:nth-child(1) {
+              .legend-dots {
+                  background: linear-gradient(to right, rgba(218, 140, 255, 1), rgba(154, 85, 255, 1));
+              }
+          }
+          &:nth-child(2) {
+              .legend-dots {
+                  background: linear-gradient(to right, rgba(255, 191, 150, 1), rgba(254, 112, 150, 1));
+              }
+          }
+          &:nth-child(3) {
+              .legend-dots {
+                  background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1))
+              }
+          }
+      }
+  }
+}
+
+#traffic-chart-legend {
+  ul {
+      li {
+          &:nth-child(1) {
+              .legend-dots {
+                  background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1))
+              }
+          }
+          &:nth-child(2) {
+              .legend-dots {
+                  background: linear-gradient(to right, rgba(6, 185, 157, 1), rgba(132, 217, 210, 1));
+              }
+          }
+          &:nth-child(3) {
+              .legend-dots {
+                  background: linear-gradient(to right, rgba(255, 191, 150, 1), rgba(254, 112, 150, 1));
+              }
+          }
+      }
+  }
+}
+
+
+/* Accordions */
+
+.accordion {
+  .card {
+      margin-bottom: .75rem;
+      box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);
+      border-radius: .25rem;
+      .card-header {
+          background-color: transparent;
+          border: none;
+          padding: 2rem;
+          * {
+              font-weight: 400;
+              font-size: 1rem;
+          }
+          button {
+              padding: 0;
+              display: block;
+              width: 100%;
+              text-align: left;
+              color: inherit;
+              text-decoration: none;
+              font-size: inherit;
+              position: relative;
+              @include transition(color .5s ease);
+              padding-right: 1.5rem;
+              &:before {
+                  font-family: "Material Design Icons";
+                  position: absolute;
+                  right: 7px;
+                  top: 0;
+                  font-size: 18px;
+                  display: block;
+              }
+              &[aria-expanded="true"] {
+                  color: theme-color(primary);
+                  &:before {
+                      content: "\F0374";
+                  }
+              }
+              &[aria-expanded="false"] {
+                  &:before {
+                      content: "\F0415";
+                  }
+              }
+          }
+      }
+      .card-body {
+          font-size: 14px;
+          padding: 0 2rem 2rem 2rem;
+          font-weight: 400;
+          line-height: 1.5;
+          i {
+              font-size: 1.25rem;
+          }
+      }
+  }
+  &.accordion-bordered {
+      background: $white;
+      box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);
+      .card {
+          margin: 0 2rem;
+          border-top: 1px solid $border-color;
+          box-shadow: none;
+          border-radius: 0;
+          border-left: 0;
+          border-right: 0;
+          .card-header,
+          .card-body {
+              padding-left: 0;
+              padding-right: 0;
+          }
+          .card-header {
+              button {
+                  &:before {
+                      color: theme-color(danger);
+                  }
+                  &[aria-expanded="true"] {
+                      color: inherit;
+                      &:before {
+                          content: "\F0062";
+                      }
+                  }
+                  &[aria-expanded="false"] {
+                      &:before {
+                          content: "\F004A";
+                      }
+                  }
+              }
+          }
+          &:first-child {
+              border-top: 0;
+          }
+          &:last-child {
+              border-bottom: 0;
+          }
+      }
+  }
+  &.accordion-filled {
+      .card {
+          padding: 0;
+          .card-header {
+              padding: 0;
+              button {
+                  padding: 2rem 4.5rem 2rem 2rem;
+                  @include transition(all .2s linear);
+                  &:before {
+                      top: 40%;
+                      right: 40px;
+                  }
+                  &[aria-expanded="true"] {
+                      background: theme-color(info);
+                      color: $white;
+                      &:before {
+                          content: "\F0143";
+                          color: $white;
+                      }
+                  }
+                  &[aria-expanded="false"] {
+                      &:before {
+                          content: "\F0140";
+                      }
+                  }
+              }
+          }
+          .card-body {
+              padding: 0 2rem 2rem 2rem;
+              background: theme-color(info);
+              color: $white;
+          }
+      }
+  }
+  &.accordion-solid-header {
+      .card {
+          padding: 0;
+          .card-header {
+              padding: 0;
+              button {
+                  padding: 2rem 4.5rem 2rem 2rem;
+                  @include transition(all .2s linear);
+                  &:before {
+                      top: 40%;
+                      right: 40px;
+                  }
+                  &[aria-expanded="true"] {
+                      background: theme-color(primary);
+                      color: $white;
+                      &:before {
+                          content: "\F0143";
+                          color: $white;
+                      }
+                  }
+                  &[aria-expanded="false"] {
+                      &:before {
+                          content: "\F0140";
+                      }
+                  }
+              }
+          }
+          .card-body {
+              padding: 2rem;
+          }
+      }
+  }
+  &.accordion-solid-content {
+      .card {
+          padding: 0;
+          .card-header {
+              padding: 0;
+              button {
+                  padding: 2rem 4.5rem 2rem 2rem;
+                  @include transition(all .2s linear);
+                  &:before {
+                      top: 40%;
+                      right: 40px;
+                  }
+                  &[aria-expanded="true"] {
+                      color: inherit;
+                      &:before {
+                          content: "\F0143";
+                      }
+                  }
+                  &[aria-expanded="false"] {
+                      &:before {
+                          content: "\F0140";
+                      }
+                  }
+              }
+          }
+          .card-body {
+              padding: 2rem;
+              background: theme-color(success);
+              color: $white;
+          }
+      }
+  }
+  &.accordion-multi-colored {
+      .card {
+          .card-header,
+          .card-body {
+              background: transparent;
+              color: $white;
+          }
+          &:nth-child(1) {
+              background: theme-color(info);
+          }
+          &:nth-child(2) {
+              background: theme-color(success);
+          }
+          &:nth-child(3) {
+              background: theme-color(danger);
+          }
+          &:nth-child(4) {
+              background: theme-color(warning);
+          }
+          &:nth-child(5) {
+              background: theme-color(info);
+          }
+          .card-header {
+              button {
+                  &[aria-expanded="true"] {
+                      color: inherit;
+                      &:before {
+                          content: "\F0143";
+                      }
+                  }
+                  &[aria-expanded="false"] {
+                      &:before {
+                          content: "\F0140";
+                      }
+                  }
+              }
+          }
+      }
+  }
+}
+

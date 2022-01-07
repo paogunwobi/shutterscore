@@ -1,0 +1,36 @@
+<section>
+  <div class="container-scroller">
+    <app-navbar *ngIf="showNavbar"></app-navbar>
+    <div class="container-fluid page-body-wrapper">
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav pt-3">
+              <li class="nav-item" [ngClass]="{ 'active': dashboard.isActive }">
+                  <a class="nav-link mr-2 ml-2" routerLink="/dashboard" routerLinkActive #dashboard="routerLinkActive">
+                      <i class="mdi mdi-home menu-icon"></i>
+                      <span class="menu-title" [ngClass]="{ 'act2': dashboard.isActive }">Dashboard</span>
+                  </a>
+              </li>
+              <li class="nav-item" [ngClass]="{ 'active': mycards.isActive }">
+                  <a class="nav-link mr-2 ml-2" routerLink="/my-cards" routerLinkActive #mycards="routerLinkActive">
+                      <i class="mdi mdi-home menu-icon"></i>
+                      <span class="menu-title" [ngClass]="{ 'act2': mycards.isActive }">My Cards</span>
+                  </a>
+              </li>
+          </ul>
+        </nav>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <!-- <app-spinner *ngIf="isLoading"></app-spinner> -->
+                <div contentAnimate *ngIf="!isLoading" class="h-100 p-2">
+                  <!-- <div class="rm-dashboard-content">
+                    <span class="mt-2 breadcrumb">
+                      <app-breadcrumb></app-breadcrumb>
+                    </span>
+                  </div> -->
+                  <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>

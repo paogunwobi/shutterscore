@@ -1,0 +1,66 @@
+<section>
+  <div class="">
+    <div class="flexRow flex-row flex ml-1 row">
+      <div class="card firstCard mr-3">
+        <div class="card-body">
+          <h6 class="titl mb-1">Total Available balance</h6>
+          <h5 class="mb-2 mt-2" style="font-size: 31px; color: #fff;">$25,953,485</h5>
+          <span class="row form-inline flex spaced">
+            <button class="fundbtn btn btn-small">fund wallet</button>
+            <button class="withdrawbtn btn btn-small">Withdraw wallet</button>
+          </span>
+        </div>
+      </div>
+
+      <span *ngFor="let item of debitCards">
+        <app-debit-card [debitCardInfo]="item">
+        </app-debit-card>
+      </span>
+
+    </div>
+  </div>
+
+  <div class="card secondCard">
+    <div class="card-body">
+      <div class="row flex">
+        <span style="margin-right: 10px;">
+          <h4 class="card-title mr-3 ml-4 mt-3" style="font-size: 17px; font-weight: 400;">Transaction history</h4>
+        </span>
+        <span class="mb-2" style="margin-left: auto; margin-right: 100px;">
+        <h5 class="rownew">
+          <span class="form-inline" style="max-width: 50px; border: none">
+            <select class="ml-1 browser-default custom-select sel border-0">
+              <option selected>All categories</option>
+              <option value="1">Completed</option>
+              <option value="2">Pending</option>
+            </select>
+          </span>
+        </h5>
+        </span>
+      </div>
+
+      <div class="card mb-1" style="border: none;">
+          <div class="card-body">
+            <div *ngFor="let Brd of transactions; let i = index" class="mb-2">
+              <span class="form-inline w-100">
+                <span class="text-center rounded-circle shadow-4" style="padding-top: 7px; letter-spacing: 0.72px; color: #fff; width: 40px; height: 40px; margin-right: 10px; background-color: #8560A8;" alt="Avatar">
+                  <i class="mdi mdi-home menu-icon"></i>
+                </span>
+                <span>
+                  <div>
+                    <span class="ttt">{{ Brd.title }}</span>
+                    <br>
+                    <span class="ttt2">{{ Brd.description }}</span>
+                  </div>
+                </span>
+                <span class="float-right" style="max-height: 40px; margin-left: auto;">
+                    <span>{{ Brd.amount }}</span>
+                    <span>{{ Brd.currency }}</span>
+                </span>
+              </span>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>

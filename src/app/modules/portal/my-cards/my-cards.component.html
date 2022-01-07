@@ -1,0 +1,57 @@
+<section>
+  <div class="">
+    <div class="flexRow flex-row flex ml-1 row">
+      <span *ngFor="let item of debitCards">
+        <app-debit-card [debitCardInfo]="item">
+        </app-debit-card>
+      </span>
+
+    </div>
+  </div>
+
+  <div class="card secondCard">
+    <div class="card-body">
+      <div class="row flex">
+        <span>
+          <h4 class="card-title ml-3 mt-3" style="font-size: 17px; font-weight: 400;">Transaction history</h4>
+        </span>
+        <span class="mb-2" style="margin-left: auto; margin-right: 100px;">
+        <h5 class="rownew">
+          <span class="form-inline" style="max-width: 50px; border: none">
+            <select class="ml-1 browser-default custom-select sel border-0">
+              <option selected>All categories</option>
+              <option value="1">Completed</option>
+              <option value="2">Pending</option>
+            </select>
+          </span>
+        </h5>
+        </span>
+      </div>
+
+      <div *ngFor="let Brd of transactions; let i = index" class="card mb-1">
+          <div class="rownew">
+              <div class="cardit form-inline col-12 pl-1 pr-1 bordered4" style="font-size: 14px;font-weight: 400; background: #fff;">
+                  <div class="col-12">
+                      <div class="row col-12">
+                        <span class="col-8 form-inline">
+                          <span class="mydot3 mr-3 pt-2 text-center">vw</span>
+                          <span>
+                            <div>
+                              <span>{{ Brd.title }}</span>
+                              <br>
+                              <span>{{ Brd.description }}</span>
+                            </div>
+                          </span>
+                        </span>
+                        <span class="col-4 form-inline">
+                          <span>{{ Brd.amount }}</span>
+                          <span>{{ Brd.currency }}</span>
+                        </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
