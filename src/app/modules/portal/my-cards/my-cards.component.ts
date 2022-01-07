@@ -53,6 +53,39 @@ export class MyCardsComponent implements OnInit {
         expiry: '14/28'
       },
     ]
+
+    this.transactions = [
+      {
+        id: '0001',
+        title: '”Food & Drinks” restaurant',
+        description: 'Cafe and restaurants    Card: ** 3478',
+        amount: -480,
+        status: 'completed',
+        currency: 'UAH',
+        createdAt: '',
+        updatedAt: '',
+      },
+      {
+        id: '0002',
+        title: '”Walmart” store (Main Str. 13)',
+        description: 'Groceries & food     Card: ** 7813',
+        amount: -80,
+        status: 'completed',
+        currency: 'USD',
+        createdAt: '',
+        updatedAt: '',
+      },
+      {
+        id: '0003',
+        title: 'Transfer from Alexey',
+        description: 'Transactions    To card: ** 3478',
+        amount: 6000,
+        status: 'completed',
+        currency: 'UAH',
+        createdAt: '',
+        updatedAt: '',
+      }
+    ]
   }
 
 }
