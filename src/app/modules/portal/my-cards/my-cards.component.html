@@ -1,24 +1,28 @@
 <section>
+  <div class="m-1 mb-4" style="border-bottom: solid .35px #949393;">
+    <h2 class="titlepg mb-1">Dashboard</h2>
+    <p class="contTitle mb-2">Sed ut perspiciatis unde omnis iste natus error sit</p>
+  </div>
+
   <div class="">
     <div class="flexRow flex-row flex ml-1 row">
       <span *ngFor="let item of debitCards">
         <app-debit-card [debitCardInfo]="item">
         </app-debit-card>
       </span>
-
     </div>
   </div>
 
-  <div class="card secondCard">
-    <div class="card-body">
-      <div class="row flex">
-        <span style="margin-right: 10px;">
-          <h4 class="card-title mr-3 ml-4 mt-3" style="font-size: 17px; font-weight: 400;">Transaction history</h4>
+  <div class="card secondCard" style="height: 38vh;">
+    <div class="card-body" style="overflow: hidden;">
+      <span class="row flex" style="border-bottom: solid 0.3 #646363;" >
+        <span style="margin-right: 10px; margin-left: 5px;">
+          <h4 class="card-title mr-4 ml-4 mt-2" style="font-size: 17px; font-weight: 400;">Transaction history</h4>
         </span>
-        <span class="mb-2" style="margin-left: auto; margin-right: 100px;">
+        <span style="margin-left: auto; margin-right: 100px;">
         <h5 class="rownew">
           <span class="form-inline" style="max-width: 50px; border: none">
-            <select class="ml-1 browser-default custom-select sel border-0">
+            <select class="ml-1 browser-default myselect border-0">
               <option selected>All categories</option>
               <option value="1">Completed</option>
               <option value="2">Pending</option>
@@ -26,9 +30,10 @@
           </span>
         </h5>
         </span>
-      </div>
+      </span>
 
-      <div class="card mb-1" style="border: none;">
+      <div class="card mb-1" style="border: none; height: 23vh; overflow-x: scroll;">
+        <span class="day3 ml-3">December 31</span>
           <div class="card-body">
             <div *ngFor="let Brd of transactions; let i = index" class="mb-2">
               <span class="form-inline w-100">
@@ -43,7 +48,9 @@
                   </div>
                 </span>
                 <span class="float-right" style="max-height: 40px; margin-left: auto;">
-                    <span>{{ Brd.amount }}</span>
+                    <span class="amount  ml-2">
+                      <span class="pos" [ngClass]="{ 'neg': (Brd.amount < 0) }">{{ Brd.amount }}</span>
+                    </span>
                     <span>{{ Brd.currency }}</span>
                 </span>
               </span>
