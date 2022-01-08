@@ -51,7 +51,6 @@ button:focus {
             width: 55px;
         }
         .navbar-brand {
-            color: lighten(color(gray-dark), 20%);
             font-size: 1.5rem;
             line-height: 48px;
             margin-right: 0;
@@ -60,7 +59,7 @@ button:focus {
             &:active,
             &:focus,
             &:hover {
-                color: lighten(color(gray-dark), 10%);
+                color: #585757;
             }
             img {
                 width: calc(#{260px} - 120px);
@@ -95,7 +94,7 @@ button:focus {
             border: 0;
             color: inherit;
             height: 70px;
-            @include border-radius(0px);
+            border-radius: 0px;
             padding-left: 5px;
             padding-right: 20px;
             &:not(.navbar-toggler-right) {
@@ -132,10 +131,7 @@ button:focus {
                     background: transparent;
                 }
             }
-            .rtl & {
-                @extend .ml-0;
-                @extend .mr-4;
-            }
+
         }
         .count-indicator {
             position: relative;
@@ -192,13 +188,13 @@ button:focus {
                 &.dropdown {
                     .dropdown-toggle {
                         &:after {
-                            color: theme-color(primary);
+                            color: blue;
                             font-size: 1rem;
                         }
                     }
                     .dropdown-menu {
                         border: none;
-                        @include border-radius(5px);
+                        border-radius: 5px;
                         -webkit-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
                         -moz-box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
                         box-shadow: 0px 3px 21px 0px rgba(0, 0, 0, 0.2);
@@ -228,7 +224,6 @@ button:focus {
                                 }
                                 .rtl & {
                                     i {
-                                        @extend .mr-0;
                                         margin-left: 10px;
                                     }
                                 }
@@ -258,7 +253,6 @@ button:focus {
                 }
                 &.nav-profile {
                     .nav-link {
-                        @extend .d-flex;
                         display: flex;
                         .nav-profile-img {
                             position: relative;
@@ -278,13 +272,13 @@ button:focus {
                                 bottom: 5px;
                                 right: -5px;
                                 &.online {
-                                    background: theme-color(success);
+                                    background: green;
                                 }
                                 &.offline {
-                                    background: theme-color(danger);
+                                    background: red;
                                 }
                                 &.busy {
-                                    background: theme-color(warning);
+                                    background: yellow;
                                 }
                             }
                         }

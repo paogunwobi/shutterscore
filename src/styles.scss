@@ -1,78 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-$type1-light: 'ubuntu-light',
-sans-serif;
-$type1-regular: 'ubuntu-regular',
-sans-serif;
-$type1-medium: 'ubuntu-medium',
-sans-serif;
-$type1-bold: 'ubuntu-bold',
-sans-serif;
-$navbar-height: 70px;
-$navbar-bg: #fff;
-$navbar-menu-color: #9c9fa6;
-$navbar-font-size: .875rem;
-$navbar-icon-font-size: 1.25rem;
-$sidebar-width-lg: 260px;
-$sidebar-width-mini: 185px;
-$sidebar-width-icon: 70px;
-$sidebar-bg: white;
-$sidebar-menu-color: #3e4b5b;
-$sidebar-submenu-color: #888;
-$sidebar-menu-active-bg: white;
-$sidebar-menu-active-color: white;
-$sidebar-menu-hover-bg: darken($sidebar-bg, 1%);
-$sidebar-menu-hover-color: darken($sidebar-menu-color, 10%);
-$sidebar-submenu-hover-color: darken($sidebar-submenu-color, 20%);
-$sidebar-menu-icon-color: black;
-$sidebar-menu-arrow-color: #9e9da0;
-$sidebar-menu-border-color: #f2edf3;
-$default-font-size: .875rem;
-$sidebar-menu-font-size: $default-font-size;
-$sidebar-menu-padding-y: 1.125rem;
-$sidebar-menu-padding-x: 2.25rem;
-$sidebar-submenu-font-size: .8125rem;
-$sidebar-submenu-item-padding: .75rem 2rem .75rem 2rem;
-$sidebar-icon-font-size: 1.125rem;
-$sidebar-arrow-font-size: .625rem;
-$sidebar-profile-bg: transparent;
-$sidebar-profile-padding: .75rem 1.625rem .75rem 1.188rem;
-$sidebar-icon-only-menu-padding: .5rem 1.625rem .5rem 1.188rem;
-$sidebar-icon-only-submenu-padding: 0 0 0 1.5rem;
-$icon-only-collapse-width: 190px;
-$icon-only-menu-bg-light: $sidebar-bg;
-$content-bg: #F5F6FA;
-$footer-bg: $content-bg;
-$footer-color: color(dark);
-$border-color: #ebedf2;
-/* BUTTONS */
-$button-fixed-width: auto;
-$btn-padding-y: .875rem;
-$btn-padding-x: 2.5rem;
-$btn-line-height: 1;
-$btn-padding-y-xs: .25rem;
-$btn-padding-x-xs: .75rem;
-$btn-padding-y-sm: .50rem;
-$btn-padding-x-sm: .81rem;
-$btn-padding-y-lg: 1rem;
-$btn-padding-x-lg: 3rem;
-$btn-font-size: .875rem;
-$btn-font-size-xs: .625rem;
-$btn-font-size-sm: .675rem;
-$btn-font-size-lg: .875rem;
-$btn-border-radius: .1875rem;
-$btn-border-radius-xs: .1875rem;
-$btn-border-radius-sm: .1875rem;
-$btn-border-radius-lg: .1875rem;
-/* BUTTONS */
-
 /* Importing Bootstrap SCSS file. */
 
-@import '~bootstrap/scss/bootstrap';
+/* @import '~bootstrap/scss/bootstrap'; */
 
 /* === Icon fonts === */
 
-@import "~@mdi/font/scss/materialdesignicons";
+/* @import "~@mdi/font/scss/materialdesignicons"; */
 
 /* Miscellanoeous */
 
@@ -97,13 +31,13 @@ html {
 
 
 .h-100 {
-  min-height: calc(91vh - #{$navbar-height});
+  min-height: calc(91vh - #{70px});
   overflow-x: scroll;
 }
 
 .page-body-wrapper {
-    min-height: calc(100vh - #{$navbar-height});
-    padding-top: $navbar-height;
+    min-height: calc(100vh - #{70px});
+    padding-top: 70px;
     display: flex;
     flex-direction: row;
     padding-left: 0;
@@ -116,8 +50,8 @@ html {
 }
 
 .main-panel {
-    width: calc(100% - #{$sidebar-width-lg});
-    min-height: calc(100vh - #{$navbar-height});
+    width: calc(100% - #{260px});
+    min-height: calc(100vh - #{70px});
     display: flex;
     flex-direction: column;
     @media (max-width: 991px) {
@@ -131,7 +65,7 @@ html {
 }
 
 .content-wrapper {
-    background: $content-bg;
+    background: #F5F6FA;
     padding: 2.05rem 2.05rem;
     width: 100%;
 }
@@ -149,8 +83,8 @@ pre {
 code {
     padding: 5px;
     color: theme-color(danger);
-    font-family: $type1-light;
-    font-size: $default-font-size;
+    font-family: 'ubuntu-light';
+    font-size: 'ubuntu-light';
     border-radius: 4px;
 }
 
@@ -167,7 +101,7 @@ code {
 
 
 .page-title {
-    color: $black;
+    color: #000;
     font-size: 1.125rem;
     margin-bottom: 0;
     .page-title-icon {
@@ -375,7 +309,7 @@ min-height: 50vh;
       margin-bottom: 0;
       li {
           list-style-type: none;
-          color: $text-muted;
+          color: #6c757d;
           font-size: .75rem;
           .legend-dots {
               width: 1rem;
@@ -415,50 +349,6 @@ min-height: 50vh;
   }
 }
 
-#visit-sale-chart-legend {
-  ul {
-      li {
-          &:nth-child(1) {
-              .legend-dots {
-                  background: linear-gradient(to right, rgba(218, 140, 255, 1), rgba(154, 85, 255, 1));
-              }
-          }
-          &:nth-child(2) {
-              .legend-dots {
-                  background: linear-gradient(to right, rgba(255, 191, 150, 1), rgba(254, 112, 150, 1));
-              }
-          }
-          &:nth-child(3) {
-              .legend-dots {
-                  background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1))
-              }
-          }
-      }
-  }
-}
-
-#traffic-chart-legend {
-  ul {
-      li {
-          &:nth-child(1) {
-              .legend-dots {
-                  background: linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1))
-              }
-          }
-          &:nth-child(2) {
-              .legend-dots {
-                  background: linear-gradient(to right, rgba(6, 185, 157, 1), rgba(132, 217, 210, 1));
-              }
-          }
-          &:nth-child(3) {
-              .legend-dots {
-                  background: linear-gradient(to right, rgba(255, 191, 150, 1), rgba(254, 112, 150, 1));
-              }
-          }
-      }
-  }
-}
-
 
 /* Accordions */
 
@@ -484,7 +374,6 @@ min-height: 50vh;
               text-decoration: none;
               font-size: inherit;
               position: relative;
-              @include transition(color .5s ease);
               padding-right: 1.5rem;
               &:before {
                   font-family: "Material Design Icons";
@@ -495,7 +384,6 @@ min-height: 50vh;
                   display: block;
               }
               &[aria-expanded="true"] {
-                  color: theme-color(primary);
                   &:before {
                       content: "\F0374";
                   }
@@ -518,11 +406,11 @@ min-height: 50vh;
       }
   }
   &.accordion-bordered {
-      background: $white;
-      box-shadow: 0px 1px 15px 1px rgba(230, 234, 236, 0.35);
+      background: #fff;
+      box-shadow: 0px 1px 15px 1px #e6eaec59;
       .card {
           margin: 0 2rem;
-          border-top: 1px solid $border-color;
+          border-top: 1px solid #ebedf2;
           box-shadow: none;
           border-radius: 0;
           border-left: 0;
@@ -534,9 +422,6 @@ min-height: 50vh;
           }
           .card-header {
               button {
-                  &:before {
-                      color: theme-color(danger);
-                  }
                   &[aria-expanded="true"] {
                       color: inherit;
                       &:before {
@@ -565,17 +450,15 @@ min-height: 50vh;
               padding: 0;
               button {
                   padding: 2rem 4.5rem 2rem 2rem;
-                  @include transition(all .2s linear);
                   &:before {
                       top: 40%;
                       right: 40px;
                   }
                   &[aria-expanded="true"] {
-                      background: theme-color(info);
-                      color: $white;
+                      color: #fff;
                       &:before {
                           content: "\F0143";
-                          color: $white;
+                          color: #fff;
                       }
                   }
                   &[aria-expanded="false"] {
@@ -587,8 +470,8 @@ min-height: 50vh;
           }
           .card-body {
               padding: 0 2rem 2rem 2rem;
-              background: theme-color(info);
-              color: $white;
+              background: orange;
+              color: white;
           }
       }
   }
@@ -599,17 +482,16 @@ min-height: 50vh;
               padding: 0;
               button {
                   padding: 2rem 4.5rem 2rem 2rem;
-                  @include transition(all .2s linear);
                   &:before {
                       top: 40%;
                       right: 40px;
                   }
                   &[aria-expanded="true"] {
-                      background: theme-color(primary);
-                      color: $white;
+                      background: blue;
+                      color: #fff;
                       &:before {
                           content: "\F0143";
-                          color: $white;
+                          color: #fff;
                       }
                   }
                   &[aria-expanded="false"] {
@@ -631,7 +513,6 @@ min-height: 50vh;
               padding: 0;
               button {
                   padding: 2rem 4.5rem 2rem 2rem;
-                  @include transition(all .2s linear);
                   &:before {
                       top: 40%;
                       right: 40px;
@@ -651,8 +532,8 @@ min-height: 50vh;
           }
           .card-body {
               padding: 2rem;
-              background: theme-color(success);
-              color: $white;
+              background: green;
+              color: white;
           }
       }
   }
@@ -661,22 +542,7 @@ min-height: 50vh;
           .card-header,
           .card-body {
               background: transparent;
-              color: $white;
-          }
-          &:nth-child(1) {
-              background: theme-color(info);
-          }
-          &:nth-child(2) {
-              background: theme-color(success);
-          }
-          &:nth-child(3) {
-              background: theme-color(danger);
-          }
-          &:nth-child(4) {
-              background: theme-color(warning);
-          }
-          &:nth-child(5) {
-              background: theme-color(info);
+              color: white;
           }
           .card-header {
               button {
