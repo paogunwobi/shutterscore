@@ -27,7 +27,7 @@ $sidebar-submenu-hover-color: darken($sidebar-submenu-color, 20%);
 $sidebar-menu-icon-color: black;
 $sidebar-menu-arrow-color: #9e9da0;
 $sidebar-menu-border-color: #f2edf3;
-$default-font-size: .875rem; // 14px as base font size
+$default-font-size: .875rem;
 $sidebar-menu-font-size: $default-font-size;
 $sidebar-menu-padding-y: 1.125rem;
 $sidebar-menu-padding-x: 2.25rem;
@@ -45,7 +45,7 @@ $content-bg: #F5F6FA;
 $footer-bg: $content-bg;
 $footer-color: color(dark);
 $border-color: #ebedf2;
-///////// BUTTONS ////////
+/* BUTTONS */
 $button-fixed-width: auto;
 $btn-padding-y: .875rem;
 $btn-padding-x: 2.5rem;
@@ -64,7 +64,7 @@ $btn-border-radius: .1875rem;
 $btn-border-radius-xs: .1875rem;
 $btn-border-radius-sm: .1875rem;
 $btn-border-radius-lg: .1875rem;
-///////// BUTTONS ////////
+/* BUTTONS */
 
 /* Importing Bootstrap SCSS file. */
 
@@ -78,8 +78,7 @@ $btn-border-radius-lg: .1875rem;
 
 body,
 html {
-    // overflow-x: hidden;
-    padding-right: 0 !important; // resets padding right added by Bootstrap modal
+    padding-right: 0 !important;
     scrollbar-width: none;
     -ms-overflow-style: none;
     overflow-y: hidden; /* Hide vertical scrollbar */
@@ -186,7 +185,6 @@ code {
 }
 
 .firstCard {
-  // height: 138px;
   opacity: 1;
   border-radius: 30px;
   min-width: 340px;
@@ -202,7 +200,6 @@ code {
 }
 
 .logo {
-  // background: transparent url('img/2000px-Mastercard-logo.svg.png') 0% 0% no-repeat padding-box;
   opacity: 1;
 }
 
@@ -350,8 +347,6 @@ min-height: 50vh;
 }
 
 .row3 {
-  // display: flex;
-  // flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: none;
   margin-right: -30px;
@@ -360,13 +355,13 @@ min-height: 50vh;
 }
 
 .grid-margin::-webkit-scrollbar {
-display: none;
+  display: none;
 }
 
 /* Hide scrollbar for IE, Edge add Firefox */
 .grid-margin {
--ms-overflow-style: none;
-scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
 }
 
 .colnew {

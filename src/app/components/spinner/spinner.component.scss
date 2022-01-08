@@ -17,7 +17,7 @@
     align-items: center;
     height: calc(100vh - #{70px} - 5.5rem);
     position: fixed;
-    width: calc(100% - #{$sidebar-width-lg} - 4rem);
+    width: calc(100% - #{260px} - 4rem);
     @media (max-width: 991px) {
         width: 100%;
     }
@@ -33,13 +33,13 @@
 
 :host-context(.sidebar-icon-only) {
     .spinner-wrapper {
-        width: calc(100% - #{$sidebar-width-icon} - 4rem);
+        width: calc(100% - #{70px} - 4rem);
     }
 }
 
 :host-context(.sidebar-mini) {
     .spinner-wrapper {
-        width: calc(100% - #{$sidebar-width-mini} - 4rem);
+        width: calc(100% - #{185px} - 4rem);
     }
 }
 

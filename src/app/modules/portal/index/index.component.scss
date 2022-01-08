@@ -1,8 +1,4 @@
-/* Sidebar */
-
-
-/* Sidebar */
-
+@import url(../../../../styles.scss);
 .page-bg {
   padding-left: 75px !important;
 }
@@ -20,14 +16,13 @@
 .menu-title2 {
     color: inherit;
     display: inline-block;
-    font-size: $sidebar-menu-font-size;
+    font-size: 0.875rem;
     line-height: 1;
     vertical-align: middle;
     font-size: 0.875rem;
 }
 
 .sidebar {
-    // display: flex;
     align-items: center;
     white-space: nowrap;
     padding: 1.125rem 0 1.125rem 0;
@@ -47,29 +42,29 @@
         font-weight: 500;
     }
     .btn {
-        font-size: $btn-font-size;
+        font-size: 0.875rem;
         line-height: 1;
-        font-family: $type1-bold;
+        font-family: 'ubuntu-bold';
         margin-right: 3px;
         i {
             font-size: 1rem;
         }
         &.btn-rounded {
-            @include border-radius(50px);
+          border-radius: 50px;
         }
         &.btn-fw {
-            min-width: $button-fixed-width;
+            min-width: auto;
         }
         &.btn-sm {
-            font-size: $btn-font-size-sm!important;
+            font-size: 0.675rem!important;
             font-weight: 500;
         }
         &.btn-lg {
-            font-size: $btn-font-size-lg;
+            font-size: 0.875rem;
         }
         &.btn-xs {
-            padding: $btn-padding-y-xs $btn-padding-x-xs;
-            font-size: $btn-font-size-xs;
+            padding: .25rem .75rem;
+            font-size: 0.625rem;
         }
         /* Buttons with only icons */
         &.btn-icon {
@@ -100,7 +95,7 @@
             padding-bottom: 60px;
         }
         .nav-item {
-            padding: 0 $sidebar-menu-padding-x;
+            padding: 0 2.25rem;
             transition-duration: 0.25s;
             // transition-property: background;
             // -webkit-transition-property: background;
@@ -111,8 +106,8 @@
                 display: flex;
                 align-items: center;
                 white-space: nowrap;
-                padding: $sidebar-menu-padding-y 0 $sidebar-menu-padding-y 0;
-                color: $sidebar-menu-color;
+                padding: 1.125rem 0 1.125rem 0;
+                color: #3e4b5b;
                 transition-duration: 0.45s;
                 transition-property: color;
                 -webkit-transition-property: color;
@@ -120,7 +115,7 @@
                 i {
                     color: inherit;
                     &.menu-icon {
-                        font-size: $sidebar-icon-font-size;
+                        font-size: 1.125rem;
                         line-height: 1;
                         // margin-left: auto;
                         margin-right: 10px;
@@ -128,7 +123,7 @@
                             margin-right: 0;
                             margin-right: auto;
                         }
-                        color: $sidebar-menu-icon-color;
+                        color: black;
                         &:before {
                             vertical-align: middle;
                         }
@@ -136,13 +131,13 @@
                     &.menu-arrow {
                         font: normal normal normal 24px/1 "Material Design Icons";
                         line-height: 1;
-                        font-size: $sidebar-icon-font-size;
+                        font-size: 1.125rem;
                         margin-left: auto;
                         .rtl & {
                             margin-left: 0;
                             margin-right: auto;
                         }
-                        color: $sidebar-menu-arrow-color;
+                        color: #9e9da0;
                         &:before {
                             content: "\f0141";
                             font-size: inherit;
@@ -161,7 +156,7 @@
                 .menu-title {
                     color: inherit;
                     display: inline-block;
-                    font-size: $sidebar-menu-font-size;
+                    font-size: .875rem;
                     line-height: 1;
                     vertical-align: middle;
                     font-size: 0.875rem;
@@ -182,8 +177,8 @@
                 background: #2994FF;
                 .nav-link {
                     .menu-title {
-                        color: $sidebar-menu-active-color;
-                        font-family: $type1-medium;
+                        color: white;
+                        font-family: 'ubuntu-medium';
                     }
                     i {
                         color: theme-color(primary);
@@ -191,7 +186,7 @@
                 }
             }
             &:hover {
-                background: $sidebar-menu-hover-bg;
+                background: darken(white, 1%);
             }
             &.nav-profile {
                 .nav-link {
@@ -248,7 +243,7 @@
                 &:hover {
                     &:not(.nav-category):not(.nav-profile) {
                         >.nav-link {
-                            color: $sidebar-menu-hover-color;
+                            color: darken(#3e4b5b, 10%);
                         }
                     }
                 }
@@ -261,10 +256,10 @@
             .nav-item {
                 padding: 0;
                 .nav-link {
-                    color: $sidebar-submenu-color;
-                    padding: $sidebar-submenu-item-padding;
+                    color: #888;
+                    padding: .75rem 2rem .75rem 2rem;
                     position: relative;
-                    font-size: $sidebar-submenu-font-size;
+                    font-size: .75rem 2rem .75rem 2rem;
                     line-height: 1;
                     height: auto;
                     border-top: 0;
@@ -279,16 +274,15 @@
                             right: 0;
                         }
                         top:50%;
-                        // @include transform(translateY(-50%));
-                        color: lighten($sidebar-submenu-color, 10%);
+                        color: lighten(#888, 10%);
                         font-size: .75rem;
                     }
                     &.active {
-                        color: $sidebar-menu-active-color;
+                        color: white;
                         background: transparent;
                     }
                     &:hover {
-                        color: $sidebar-submenu-hover-color;
+                        color: darken(#888, 20%);
                     }
                 }
                 &:hover {
@@ -303,7 +297,7 @@
 :host-context(.sidebar-icon-only) {
     @media(min-width: 992px) {
         .sidebar {
-            width: $sidebar-width-icon;
+            width: 70px;
             .nav {
                 overflow: visible;
                 margin-left: 0;
@@ -323,8 +317,8 @@
                             display: none;
                         }
                         .menu-title {
-                            @include border-radius(0 5px 5px 0px);
-                            background: $sidebar-menu-hover-bg;
+                            border-radius: 0 5px 5px 0px;
+                            background: darken(white, 1%);
                         }
                         i {
                             &.menu-icon {
@@ -338,7 +332,7 @@
                         }
                         &[aria-expanded] {
                             .menu-title {
-                                @include border-radius(0 5px 0 0px);
+                              border-radius: 0 5px 0 0px;
                             }
                         }
                     }
@@ -350,14 +344,14 @@
                             .menu-title {
                                 display: flex;
                                 align-items: center;
-                                background: $sidebar-menu-hover-bg;
+                                background: darken(white, 1%);
                                 padding: 0.5rem 1.4rem;
-                                left: $sidebar-width-icon;
+                                left: 70px;
                                 position: absolute;
                                 text-align: left;
                                 top: 0;
                                 bottom: 0;
-                                width: $icon-only-collapse-width;
+                                width: 190px;
                                 z-index: 1;
                                 line-height: 1.8;
                                 -webkit-box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25);
@@ -370,11 +364,11 @@
                         .collapse,
                         .collapsing {
                             display: block;
-                            background: $icon-only-menu-bg-light;
-                            @include border-radius(0 0 5px 0);
+                            background: white;
+                            border-radius: 0 0 5px 0;
                             position: absolute;
-                            left: $sidebar-width-icon;
-                            width: $icon-only-collapse-width;
+                            left: 70px;
+                            width: 190;
                             -webkit-box-shadow: 4px 4px 7px 0px rgba(182, 185, 189, 0.25);
                             box-shadow: 4px 4px 7px 0px rgba(182, 185, 189, 0.25);
                         }
@@ -404,7 +398,7 @@
                     }
                 }
                 &.sub-menu {
-                    padding: $sidebar-icon-only-submenu-padding;
+                    padding: 0 0 0 1.5rem;
                     .nav-item {
                         .nav-link {
                             text-align: left;
@@ -424,11 +418,11 @@
 @media screen and (max-width: 991px) {
     .sidebar-offcanvas {
         position: fixed;
-        max-height: calc(100vh - #{$navbar-height});
-        top: $navbar-height;
+        max-height: calc(100vh - #{70px});
+        top: 70px;
         bottom: 0;
         overflow: auto;
-        right: -$sidebar-width-lg;
+        right: -260px;
         -webkit-transition: all 0.25s ease-out;
         -o-transition: all 0.25s ease-out;
         transition: all 0.25s ease-out;
