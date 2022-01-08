@@ -1,9 +1,9 @@
 <section>
-  <div class="container-scroller">
+  <div class="container-scroller" style="height: 100vh;">
     <app-navbar *ngIf="showNavbar"></app-navbar>
-    <div class="container-fluid page-body-wrapper">
-        <nav class="sidebar sidebar-offcanvas" id="sidebar">
-          <ul class="nav pt-3">
+    <div class="container-fluid page-body-wrapper" style="height: 80vh;">
+        <nav class="sidebar sidebar-offcanvas h-100" style="height: max-content;" id="sidebar">
+          <ul class="nav pt-3" style="height: 75vh;">
               <li class="nav-item" [ngClass]="{ 'active': dashboard.isActive }">
                   <a class="nav-link mr-2 ml-2" routerLink="/dashboard" routerLinkActive #dashboard="routerLinkActive">
                       <i class="mdi mdi-home menu-icon"></i>
@@ -16,11 +16,19 @@
                       <span class="menu-title" [ngClass]="{ 'act2': mycards.isActive }">My Cards</span>
                   </a>
               </li>
-          </ul>
+            </ul>
+            <ul class="nav" style="height: 10vh; min-height: 70px; margin: auto; margin-bottom: 0; margin-top: auto;">
+              <li class="nav-item" (click)="logout()">
+                  <a class="nav-link mr-2 ml-2 mb-3">
+                      <i class="mdi mdi-logout menu-icon" style="color: #FF6464;"></i>
+                      <span class="menu-title">Logout</span>
+                  </a>
+              </li>
+            </ul>
         </nav>
-        <div class="main-panel">
+        <div class="main-panel" style="overflow: scroll !important;">
             <div class="content-wrapper">
-                <!-- <app-spinner *ngIf="isLoading"></app-spinner> -->
+                <app-spinner *ngIf="isLoading"></app-spinner>
                 <div contentAnimate *ngIf="!isLoading" class="h-100 p-1">
                   <router-outlet></router-outlet>
                 </div>

@@ -1,3 +1,4 @@
+import { CardDetailsComponent } from './card-details/card-details.component';
 import { MyCardsComponent } from './my-cards/my-cards.component';
 import { DashboardComponent } from './../portal/dashboard/dashboard.component';
 import { IndexComponent } from './index/index.component';
@@ -18,6 +19,12 @@ const routes: Routes = [
         path: 'my-cards',
         component: MyCardsComponent,
         data: { breadcrumb: "My Cards" },
+      },
+      {
+        // path: 'card-detail/:id',
+        path: 'card-detail',
+        component: CardDetailsComponent,
+        data: { breadcrumb: "Card Details" },
       }
     ]
   }

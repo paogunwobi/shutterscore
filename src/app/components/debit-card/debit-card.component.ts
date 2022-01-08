@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DebitCard } from 'src/app/interfaces/debit-card.interface';
 
 @Component({
@@ -9,12 +10,15 @@ import { DebitCard } from 'src/app/interfaces/debit-card.interface';
 export class DebitCardComponent implements OnInit {
 
   @Input() debitCardInfo: DebitCard | undefined;
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   onClick() {
+    this.router.navigate([`/card-detail`]);
     // do something
     // route with card data
   }

@@ -6,13 +6,15 @@ import { PortalRoutingModule } from './portal-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { IndexComponent } from './index/index.component';
 import { MyCardsComponent } from './my-cards/my-cards.component';
+import { CardDetailsComponent } from './card-details/card-details.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     IndexComponent,
-    MyCardsComponent
+    MyCardsComponent,
+    CardDetailsComponent
   ],
   imports: [
     CommonModule,

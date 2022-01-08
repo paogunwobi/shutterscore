@@ -1,0 +1,119 @@
+<section>
+  <div class="form-inline m-1 mb-4" style="border-bottom: solid .35px #949393;">
+    <span>
+      <h2 class="titlepg mb-1">Debit card</h2>
+      <p class="contTitle mb-2">Sed ut perspiciatis unde omnis iste natus error sit</p>
+    </span>
+    <span class="float-right" style="margin-left: auto;">
+      <button class="addbtn btn btn-small"> <i class="mr-1 mdi mdi-delete menu-icon"></i> Delete card</button>
+    </span>
+  </div>
+
+  <div class="">
+    <div class="flexRow flex-row flex ml-1 row">
+      <span>
+        <app-debit-card [debitCardInfo]="debitCard">
+        </app-debit-card>
+      </span>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: -10px;">
+    <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12" style="height: 40vh;">
+      <div class="card secondCard">
+        <div class="card-body" style="overflow: hidden;">
+          <span class="row flex" style="border-bottom: solid 0.3 #646363;" >
+            <span style="margin-right: 10px; margin-left: 5px;">
+              <h4 class="card-title mr-4 ml-4 mt-2" style="font-size: 17px; font-weight: 400;">Activity</h4>
+            </span>
+            <span style="margin-left: auto; margin-right: 90px;">
+            <h5 class="rownew">
+              <span class="form-inline" style="max-width: 50px; border: none">
+                <select class="ml-1 browser-default myselect border-0">
+                  <option selected>All categories</option>
+                  <option value="1">Completed</option>
+                  <option value="2">Pending</option>
+                </select>
+              </span>
+            </h5>
+            </span>
+          </span>
+
+          <div class="card mb-1" style="border: none; height: 25vh; overflow-x: scroll;">
+            <span class="day3 ml-3">December 31</span>
+              <div class="card-body">
+                <div *ngFor="let Brd of transactions; let i = index" class="mb-2">
+                  <span class="form-inline w-100">
+                    <span class="text-center rounded-circle shadow-4" style="padding-top: 7px; letter-spacing: 0.72px; color: #fff; width: 40px; height: 40px; margin-right: 10px; background-color: #8560A8;" alt="Avatar">
+                      <i class="mdi mdi-home menu-icon"></i>
+                    </span>
+                    <span>
+                      <div>
+                        <span class="ttt">{{ Brd.title }}</span>
+                        <br>
+                        <span class="ttt2">{{ Brd.description }}</span>
+                      </div>
+                    </span>
+                    <span class="float-right" style="max-height: 40px; margin-left: auto;">
+                      <span class="amount  mr-1">
+                        <span class="pos" [ngClass]="{ 'neg': (Brd.amount < 0) }">{{ Brd.amount }}</span>
+                      </span>
+                      <span style="font-size: 13px; font-weight: 500; color: #979797;">{{ Brd.currency }}</span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12" style="height: 40vh;">
+      <div class="card secondCard">
+        <div class="card-body" style="overflow: hidden;">
+          <span class="row flex" style="border-bottom: solid 0.3 #646363;" >
+            <span style="margin-right: 10px; margin-left: 5px;">
+              <h4 class="card-title mr-4 ml-4 mt-2" style="font-size: 17px; font-weight: 400;">Activity</h4>
+            </span>
+            <span style="margin-left: auto; margin-right: 90px;">
+            <h5 class="rownew">
+              <span class="form-inline" style="max-width: 50px; border: none">
+                <select class="ml-1 browser-default myselect border-0">
+                  <option selected>All categories</option>
+                  <option value="1">Completed</option>
+                  <option value="2">Pending</option>
+                </select>
+              </span>
+            </h5>
+            </span>
+          </span>
+
+          <div class="card mb-1" style="border: none; height: 25vh; overflow-x: scroll;">
+            <span class="day3 ml-3">December 31</span>
+              <div class="card-body">
+                <div *ngFor="let Brd of transactions; let i = index" class="mb-2">
+                  <span class="form-inline w-100">
+                    <span class="text-center rounded-circle shadow-4" style="padding-top: 7px; letter-spacing: 0.72px; color: #fff; width: 40px; height: 40px; margin-right: 10px; background-color: #8560A8;" alt="Avatar">
+                      <i class="mdi mdi-home menu-icon"></i>
+                    </span>
+                    <span>
+                      <div>
+                        <span class="ttt">{{ Brd.title }}</span>
+                        <br>
+                        <span class="ttt2">{{ Brd.description }}</span>
+                      </div>
+                    </span>
+                    <span class="float-right" style="max-height: 40px; margin-left: auto;">
+                      <span class="amount  mr-1">
+                        <span class="pos" [ngClass]="{ 'neg': (Brd.amount < 0) }">{{ Brd.amount }}</span>
+                      </span>
+                      <span style="font-size: 13px; font-weight: 500; color: #979797;">{{ Brd.currency }}</span>
+                    </span>
+                  </span>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

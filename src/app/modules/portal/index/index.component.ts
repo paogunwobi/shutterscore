@@ -56,4 +56,8 @@ export class IndexComponent implements OnInit {
     });
   }
 
+  logout(): void {
+    // logout logic
+    console.log('logging out');
+  }
 }
