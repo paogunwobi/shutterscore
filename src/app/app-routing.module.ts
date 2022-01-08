@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'auth'
+    redirectTo: 'auth/sign-in'
   }
 ];
 

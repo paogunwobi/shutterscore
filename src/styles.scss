@@ -124,6 +124,8 @@ code {
   min-width: 340px;
   border: none;
   background-color: #2994FF;
+  background: url('assets/bg.png') no-repeat;
+  background-size: cover;
   padding: 10px;
 }
 
@@ -214,6 +216,10 @@ code {
   border-radius: 20px;
   opacity: 1;
   border: none;
+}
+
+.logoShadow {
+  box-shadow: 0px 15px 15px #fcfcfc0d;
 }
 
 .flexRow {

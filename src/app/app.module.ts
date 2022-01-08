@@ -8,14 +8,10 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { DebitCardComponent } from './components/debit-card/debit-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    SpinnerComponent
   ],
   imports: [
     BrowserModule,
