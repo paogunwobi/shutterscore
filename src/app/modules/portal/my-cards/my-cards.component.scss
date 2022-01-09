@@ -70,3 +70,12 @@
   opacity: 1;
   color: white;
 }
+
+body,
+html {
+    padding-right: 0 !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}

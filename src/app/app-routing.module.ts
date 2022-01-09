@@ -8,20 +8,18 @@ const routes: Routes = [
       .then(m => m.AuthModule),
   },
   {
-    path: '',
+    path: 'portal',
     loadChildren: () => import('./modules/portal/portal.module')
       .then(m => m.PortalModule),
   },
   {
     path: '**',
-    redirectTo: 'auth/sign-in'
+    redirectTo: 'auth'
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    onSameUrlNavigation: 'reload',
-  })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

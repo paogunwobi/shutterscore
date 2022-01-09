@@ -9,8 +9,11 @@ const routes: Routes = [
     component: SignInComponent,
   },
   {
-    path: 'sign-out',
+    path: 'sign-up',
     component: SignUpComponent,
+  },
+  {
+    path: '', redirectTo: 'sign-up',
   }
 ];
 

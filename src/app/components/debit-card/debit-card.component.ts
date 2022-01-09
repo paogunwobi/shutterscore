@@ -18,7 +18,7 @@ export class DebitCardComponent implements OnInit {
   }
 
   onClick() {
-    this.router.navigate([`/card-detail`]);
+    this.router.navigate([`/portal/card-detail`]);
     // do something
     // route with card data
   }

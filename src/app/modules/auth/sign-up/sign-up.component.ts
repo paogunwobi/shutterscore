@@ -1,62 +1,53 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss']
+  styleUrls: ['./sign-up.component.scss'],
+  providers: [NgbCarouselConfig]
 })
 export class SignUpComponent implements OnInit {
-  form: FormGroup | undefined;
-  loading = false;
-  submitted = false;
+
+  slides: {title: string, subtitle: string, imgUrl: string}[] = []
+  showNavigationArrows = false;
+  showNavigationIndicators = true;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-  ) { }
-
-  ngOnInit() {
-    this.form = this.formBuilder.group({
-        firstName: ['', Validators.required],
-        lastName: ['', Validators.required],
-        username: ['', Validators.required],
-        password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+    public router: Router,
+    config: NgbCarouselConfig
+  ) {
+    config.showNavigationArrows = true;
+    config.showNavigationIndicators = true;
   }
 
-  // convenience getter for easy access to form fields
-  get f() { return this.form?.controls; }
+  ngOnInit(): void {
+    const status = window.sessionStorage.getItem('loggedIn');
+    if (status) {
+      this.router.navigate(['portal/dashboard']);
+    }
+    this.slides = [
+      {
+        title: 'Pay with card',
+        subtitle: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo',
+        imgUrl: 'assets/surface1.svg'
+      },
+      {
+        title: 'Grow your funds',
+        subtitle: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo',
+        imgUrl: 'assets/bank.svg'
+      },
+      {
+        title: 'Pay anywhere, anytime',
+        subtitle: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo',
+        imgUrl: 'assets/atm-machine.svg'
+      },
+    ]
+  }
 
   onSubmit() {
-    this.submitted = true;
-
-    // reset alerts on submit
-    // this.alertService.clear();
-
-    // stop here if form is invalid
-    if (this.form && this.form?.invalid) {
-        return;
-    }
-
-    this.loading = true;
-    setTimeout(() => {
-      this.loading = false;
-      this.router.navigate(['../login'], { relativeTo: this.route });
-    }, 4000)
-
-  //   this.accountService.register(this.form.value)
-  //       .pipe(first())
-  //       .subscribe(
-  //           data => {
-  //               this.alertService.success('Registration successful', { keepAfterRouteChange: true });
-  //               this.router.navigate(['../login'], { relativeTo: this.route });
-  //           },
-  //           error => {
-  //               this.alertService.error(error);
-  //               this.loading = false;
-  //           });
+    // this.router.navigateByUrl('portal/dashboard');
+    this.router.navigate(['portal/dashboard']);
   }
 }

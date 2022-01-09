@@ -58,6 +58,8 @@ export class IndexComponent implements OnInit {
 
   logout(): void {
     // logout logic
+    this.router.navigate(['auth/sign-in'])
+    window.sessionStorage.clear();
     console.log('logging out');
   }
 }

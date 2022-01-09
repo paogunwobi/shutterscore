@@ -1,5 +1,4 @@
 import { SharedModule } from './shared/shared.module';
-import { SpinnerComponent } from './components/spinner/spinner.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 

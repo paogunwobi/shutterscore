@@ -1,5 +1,7 @@
+import { SharedModule } from './../../shared/shared.module';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
@@ -15,6 +17,12 @@ import { SignInComponent } from './sign-in/sign-in.component';
     CommonModule,
     AuthRoutingModule,
     ReactiveFormsModule,
+    NgbModule,
+    NgbCarouselModule,
+    SharedModule,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
   ]
 })
 export class AuthModule { }

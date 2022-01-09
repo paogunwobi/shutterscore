@@ -1,43 +1,76 @@
-<div class="card">
-  <h4 class="card-header">Register</h4>
-  <div class="card-body">
-      <form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-              <label for="firstName">First Name</label>
-              <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': f !== undefined && submitted && f['firstName'].errors }" />
-              <div *ngIf="f !== undefined && submitted && f['firstName'].errors" class="invalid-feedback">
-                  <div *ngIf="f['firstName'].errors['required']">First Name is required</div>
-              </div>
+<section>
+  <div class="row" style="height: 100vh; overflow-y: scroll;">
+    <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12" style="height: 100vh;text-align: left; width: 100%; overflow-x: scroll;">
+      <!-- Default form register -->
+      <span class="" style="min-width: 550px;">
+        <!-- <form class="border border-light p-5" (ngSubmit)="onSubmit()"> -->
+        <form class="border border-light p-5">
+          <div class="p-3">
+            <span class="text-center">
+              <p class="h4 mb-2">Create an account</p>
+              <p class="h5 mb-4" style="font-weight: 300;">Create an account to Continue</p>
+            </span>
+
+
+            <!-- E-mail -->
+            <label for="email">Email</label>
+            <input type="email" id="defaultRegisterFormEmail" class="form-control mb-4" placeholder="E-mail">
+
+            <!-- Password -->
+            <label for="password">Password</label>
+            <input type="password" id="defaultRegisterFormPassword" class="form-control mb-4" placeholder="*********************" aria-describedby="defaultRegisterFormPasswordHelpBlock">
+
+            <!-- Confirm Password -->
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="defaultRegisterFormConfirmPassword" class="form-control mb-4" placeholder="*********************" aria-describedby="defaultRegisterFormConfirmPasswordHelpBlock">
+
+            <!-- Select Currency -->
+            <span class="mb-4">
+              <label for="currency">Select Currency</label>
+              <select class="browser-default custom-select">
+                <option selected>United States Dollar (USD)</option>
+                <option value="1">UAH</option>
+                <option value="2">EUR</option>
+                <option value="3">NGN</option>
+              </select>
+            </span>
+
+            <!-- check box -->
+            <span class="row form-inline ml-1 mt-3">
+              <input type="checkbox" id="defaultRegisterPhonePassword" class="form-control mr-2" placeholder="Phone number" aria-describedby="defaultRegisterFormPhoneHelpBlock">
+              <label for="checkbox" style="word-wrap: break-word;">I accept these terms and conditions</label>
+            </span>
+
+
+            <span class="text-center" style="text-align: right;word-wrap: nowrap;">
+              <!-- Sign up button -->
+              <button color="primary" class="btn newBtn my-4" (click)="onSubmit()">Get Started</button>
+
+              <span class="row form-inline" style='margin-left: 25%; margin-right: 25%;'>
+                <span>Don't Have an account? <a class="ml-1" routerLink="/auth/sign-in"> Sign In </a>
+                </span>
+              </span>
+            </span>
+
           </div>
-          <div class="form-group">
-              <label for="lastName">Last Name</label>
-              <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': f !== undefined && submitted && f['lastName'].errors }" />
-              <div *ngIf="f !== undefined && submitted && f['lastName'].errors" class="invalid-feedback">
-                  <div *ngIf="f['lastName'].errors['required']">Last Name is required</div>
-              </div>
-          </div>
-          <div class="form-group">
-              <label for="username">Username</label>
-              <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': f !== undefined && submitted && f['username'].errors }" />
-              <div *ngIf=" f !== undefined && submitted && f['username'].errors" class="invalid-feedback">
-                  <div *ngIf="f['username'].errors['required']">Username is required</div>
-              </div>
-          </div>
-          <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': f !== undefined && submitted && f['password'].errors }" />
-              <div *ngIf="f !== undefined && submitted && f['password'].errors" class="invalid-feedback">
-                  <div *ngIf="f['password'].errors['required']">Password is required</div>
-                  <div *ngIf="f['password'].errors['minlength']">Password must be at least 6 characters</div>
-              </div>
-          </div>
-          <div class="form-group">
-              <button [disabled]="loading" class="btn btn-primary">
-                  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-                  Get Stsrted
-              </button>
-              <a routerLink="../login" class="btn btn-link">Cancel</a>
-          </div>
-      </form>
+        </form>
+      </span>
+    </div>
+    <div class="col-lg-7 col-md-6 sideBg mobile-hide">
+      <div style="padding: auto">
+        <ngb-carousel *ngIf="slides" [interval]="3500" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+          <ng-template ngbSlide *ngFor="let image of slides">
+            <div class="picsum-img-wrapper" style="height: 100vh;">
+              <!-- <img src="{{image?.imgUrl}}"> -->
+            </div>
+            <div class="carousel-caption">
+              <img class="mb-4" src="{{image?.imgUrl}}">
+              <h3>{{ image.title }}</h3>
+              <p>{{ image.subtitle }}</p>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
   </div>
-</div>
+</section>
