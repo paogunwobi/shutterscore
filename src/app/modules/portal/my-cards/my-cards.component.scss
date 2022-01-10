@@ -79,3 +79,17 @@ html {
     overflow-y: hidden; /* Hide vertical scrollbar */
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
+
+@media screen and (max-width: 767.5px) {
+  .mobile-hide {
+    display: none;
+  }
+
+  .mobile-round {
+    border-radius: 50%;
+  }
+
+  .fnt {
+    font-size: 25px;
+  }
+}

@@ -12,6 +12,7 @@ export class IndexComponent implements OnInit {
   public samplePagesCollapsed = false;
   showNavbar = true;
   isLoading: boolean | undefined;
+  public toggled = false;
 
 
   constructor(private router: Router) {

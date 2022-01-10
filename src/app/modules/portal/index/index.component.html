@@ -1,39 +1,46 @@
-<section>
-  <div class="container-scroller" style="height: 100vh;">
-    <app-navbar *ngIf="showNavbar"></app-navbar>
-    <div class="container-fluid page-body-wrapper" style="height: 80vh;">
-        <nav class="sidebar sidebar-offcanvas h-100" style="height: max-content;" id="sidebar">
-          <ul class="nav pt-3" style="height: 75vh;">
-              <li class="nav-item" [ngClass]="{ 'active': dashboard.isActive }">
-                  <a class="nav-link mr-2 ml-2" routerLink="/portal/dashboard" routerLinkActive #dashboard="routerLinkActive">
-                      <i class="mdi mdi-home menu-icon"></i>
-                      <span class="menu-title" [ngClass]="{ 'act2': dashboard.isActive }">Dashboard</span>
-                  </a>
-              </li>
-              <li class="nav-item" [ngClass]="{ 'active': mycards.isActive }">
-                  <a class="nav-link mr-2 ml-2" routerLink="/portal/my-cards" routerLinkActive #mycards="routerLinkActive">
-                      <i class="mdi mdi-home menu-icon"></i>
-                      <span class="menu-title" [ngClass]="{ 'act2': mycards.isActive }">My Cards</span>
-                  </a>
-              </li>
-            </ul>
-            <ul class="nav" style="height: 10vh; min-height: 70px; margin: auto; margin-bottom: 0; margin-top: auto;">
-              <li class="nav-item" (click)="logout()">
-                  <a class="nav-link mr-2 ml-2 mb-3">
-                      <i class="mdi mdi-logout menu-icon" style="color: #FF6464;"></i>
-                      <span class="menu-title">Logout</span>
-                  </a>
-              </li>
-            </ul>
-        </nav>
-        <div class="main-panel" style="min-height: 100%; overflow: scroll !important;">
-            <div class="content-wrapper">
-                <!-- <app-spinner *ngIf="isLoading"></app-spinner> -->
-                <div contentAnimate *ngIf="!isLoading" class="h-100 p-1">
-                  <router-outlet></router-outlet>
-                </div>
-            </div>
-        </div>
-    </div>
+<aside class="rm-sidenav position-fixed" [ngClass]="{ 'toggled': toggled }" style="padding-top: 10vh; background-color: #fff;" id="sidebar">
+  <div class="rm-sidebar-content">
+    <nav class="sidebar h-100" id="sidebar">
+      <ul class="nav pt-3" style="height: 73vh;">
+          <li class="nav-item" [ngClass]="{ 'active': dashboard.isActive }">
+              <a class="nav-link mr-2 ml-2" routerLink="/portal/dashboard" routerLinkActive #dashboard="routerLinkActive">
+                  <i class="mdi mdi-home menu-icon"></i>
+                  <span class="menu-title" [ngClass]="{ 'act2': dashboard.isActive }">Dashboard</span>
+              </a>
+          </li>
+          <li class="nav-item" [ngClass]="{ 'active': mycards.isActive }">
+              <a class="nav-link mr-2 ml-2" routerLink="/portal/my-cards" routerLinkActive #mycards="routerLinkActive">
+                  <i class="mdi mdi-home menu-icon"></i>
+                  <span class="menu-title" [ngClass]="{ 'act2': mycards.isActive }">My Cards</span>
+              </a>
+          </li>
+        </ul>
+        <ul class="nav" style="height: 15vh; min-height: 70px; margin: auto; margin-bottom: 0; margin-top: auto;">
+          <li class="nav-item" (click)="logout()">
+              <a class="nav-link mr-2 ml-2 mb-3">
+                  <i class="mdi mdi-logout menu-icon" style="color: #FF6464;"></i>
+                  <span class="menu-title">Logout</span>
+              </a>
+          </li>
+        </ul>
+    </nav>
   </div>
+</aside>
+<section class="rm-main-content" style="background-color: #F5F6FA;">
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm rm-dashboard-navbar">
+    <div class="d-flex align-items-between w-100">
+      <ul class="navbar-nav ml-auto">
+        <div class="d-flex justify-content-center align-items-center">
+          <div class="sidenav-toggle" (click)="toggled=!toggled">
+            <a class="nav-link mr-2 ml-2">
+              <i class="mdi mdi-menu menu-icon" style="font-size: 30px; color: #464545;"></i>
+          </a>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </nav>
+  <span contentAnimate *ngIf="!isLoading" class="p-4 h-100">
+    <router-outlet></router-outlet>
+  </span>
 </section>

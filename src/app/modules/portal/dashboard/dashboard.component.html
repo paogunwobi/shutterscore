@@ -1,5 +1,5 @@
 <section style="height: 80vh;">
-  <div class="m-1 mb-4" style="border-bottom: solid .35px #949393;">
+  <div class="m-1 mb-4" style="border-bottom: solid .35px #949393; min-width: 420px; overflow: scroll;">
     <h2 class="titlepg mb-1">Dashboard</h2>
     <p class="contTitle mb-2">Sed ut perspiciatis unde omnis iste natus error sit</p>
   </div>
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div class="card secondCard" style="height: 38vh;">
+  <div class="flexRow card secondCard" style="height: 40vh; min-width: 460px;">
     <div class="card-body" style="overflow: hidden;">
       <span class="row flex" style="border-bottom: solid 0.3 #646363;" >
         <span style="margin-right: 10px; margin-left: 5px;">
@@ -44,7 +44,7 @@
         </span>
       </span>
 
-      <div class="card mb-1" style="border: none; height: 23vh; overflow-x: scroll;">
+      <div class="card mb-1" style="border: none; height: 29vh; overflow-x: scroll;">
         <span class="day3 ml-3">December 31</span>
           <div class="card-body">
             <div *ngFor="let Brd of transactions; let i = index" class="mb-2">
