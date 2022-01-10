@@ -1,11 +1,13 @@
 <section style="height: 80vh;">
-  <div class="m-1 mb-4" style="border-bottom: solid .35px #949393; min-width: 420px; overflow: scroll;">
-    <h2 class="titlepg mb-1">Dashboard</h2>
-    <p class="contTitle mb-2">Sed ut perspiciatis unde omnis iste natus error sit</p>
+  <div class="flexRow flex-row flex ml-1 mr-1 row">
+    <div class="m-1 mb-4" style="border-bottom: solid .35px #949393; width: 100%; min-width: 420px; overflow: scroll;">
+      <h2 class="titlepg mb-1">Dashboard</h2>
+      <p class="contTitle mb-2">Sed ut perspiciatis unde omnis iste natus error sit</p>
+    </div>
   </div>
 
   <div class="">
-    <div class="flexRow flex-row flex ml-1 row">
+    <div class="flexRow flex-row flex ml-1 mr-1 row">
       <div class="card firstCard mr-3">
         <div class="card-body">
           <h6 class="titl mb-1">Total Available balance</h6>
@@ -25,49 +27,51 @@
     </div>
   </div>
 
-  <div class="flexRow card secondCard" style="height: 40vh; min-width: 460px;">
-    <div class="card-body" style="overflow: hidden;">
-      <span class="row flex" style="border-bottom: solid 0.3 #646363;" >
-        <span style="margin-right: 10px; margin-left: 5px;">
-          <h4 class="card-title mr-4 ml-4 mt-2" style="font-size: 17px; font-weight: 400;">Transaction history</h4>
-        </span>
-        <span style="margin-left: auto; margin-right: 90px;">
-        <h5 class="rownew">
-          <span class="form-inline" style="max-width: 50px; border: none">
-            <select class="ml-1 browser-default myselect border-0">
-              <option selected>All categories</option>
-              <option value="1">Completed</option>
-              <option value="2">Pending</option>
-            </select>
+  <div class="flexRow flex-row flex ml-1 mr-1 row">
+    <div class="card secondCard" style="height: 40vh; width: 100%; min-width: 460px;">
+      <div class="card-body" style="overflow: hidden;">
+        <span class="row flex" style="border-bottom: solid 0.3 #646363;" >
+          <span style="margin-right: 10px; margin-left: 5px;">
+            <h4 class="card-title mr-4 ml-4 mt-2" style="font-size: 17px; font-weight: 400;">Transaction history</h4>
           </span>
-        </h5>
+          <span style="margin-left: auto; margin-right: 90px;">
+          <h5 class="rownew">
+            <span class="form-inline" style="max-width: 50px; border: none">
+              <select class="ml-1 browser-default myselect border-0">
+                <option selected>All categories</option>
+                <option value="1">Completed</option>
+                <option value="2">Pending</option>
+              </select>
+            </span>
+          </h5>
+          </span>
         </span>
-      </span>
 
-      <div class="card mb-1" style="border: none; height: 29vh; overflow-x: scroll;">
-        <span class="day3 ml-3">December 31</span>
-          <div class="card-body">
-            <div *ngFor="let Brd of transactions; let i = index" class="mb-2">
-              <span class="form-inline w-100">
-                <span class="text-center rounded-circle shadow-4" style="padding-top: 7px; letter-spacing: 0.72px; color: #fff; width: 40px; height: 40px; margin-right: 10px; background-color: #8560A8;" alt="Avatar">
-                  <i class="mdi mdi-home menu-icon"></i>
+        <div class="card mb-1" style="border: none; height: 29vh; overflow-x: scroll;">
+          <span class="day3 ml-3">December 31</span>
+            <div class="card-body">
+              <div *ngFor="let Brd of transactions; let i = index" class="mb-2">
+                <span class="form-inline w-100">
+                  <span class="text-center rounded-circle shadow-4" style="padding-top: 7px; letter-spacing: 0.72px; color: #fff; width: 40px; height: 40px; margin-right: 10px; background-color: #8560A8;" alt="Avatar">
+                    <i class="mdi mdi-home menu-icon"></i>
+                  </span>
+                  <span>
+                    <div>
+                      <span class="ttt">{{ Brd.title }}</span>
+                      <br>
+                      <span class="ttt2">{{ Brd.description }}</span>
+                    </div>
+                  </span>
+                  <span class="float-right" style="max-height: 40px; margin-left: auto;">
+                      <span class="amount  mr-1">
+                        <span class="pos" [ngClass]="{ 'neg': (Brd.amount < 0) }">{{ Brd.amount }}</span>
+                      </span>
+                      <span style="font-size: 13px; font-weight: 500; color: #979797;">{{ Brd.currency }}</span>
+                  </span>
                 </span>
-                <span>
-                  <div>
-                    <span class="ttt">{{ Brd.title }}</span>
-                    <br>
-                    <span class="ttt2">{{ Brd.description }}</span>
-                  </div>
-                </span>
-                <span class="float-right" style="max-height: 40px; margin-left: auto;">
-                    <span class="amount  mr-1">
-                      <span class="pos" [ngClass]="{ 'neg': (Brd.amount < 0) }">{{ Brd.amount }}</span>
-                    </span>
-                    <span style="font-size: 13px; font-weight: 500; color: #979797;">{{ Brd.currency }}</span>
-                </span>
-              </span>
+              </div>
             </div>
-          </div>
+        </div>
       </div>
     </div>
   </div>
