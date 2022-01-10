@@ -1,6 +1,7 @@
 import { DebitCard } from 'src/app/interfaces/debit-card.interface';
 import { Transaction } from './../../../interfaces/transaction.interface';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,9 +16,16 @@ export class DashboardComponent implements OnInit {
   transactions: Transaction[] | any[] = [];
   loading: boolean | undefined;
 
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   async ngOnInit(): Promise<void> {
+    const status = window.sessionStorage.getItem('loggedIn');
+    if (!status) {
+      this.router.navigate(['auth/sign-in']);
+    }
+
     this.debitCards = [
       {
         id: '001',

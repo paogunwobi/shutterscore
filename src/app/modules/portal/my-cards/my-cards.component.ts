@@ -1,6 +1,7 @@
 import { DebitCard } from 'src/app/interfaces/debit-card.interface';
 import { Transaction } from './../../../interfaces/transaction.interface';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-cards',
@@ -12,9 +13,15 @@ export class MyCardsComponent implements OnInit {
   Transactions: Transaction[] | any[] = [];
   transactions: Transaction[] | any[] = [];
   debitCards: DebitCard[] = [];
-  constructor() { }
+  constructor(
+    public router: Router
+  ) { }
 
   ngOnInit(): void {
+    const status = window.sessionStorage.getItem('loggedIn');
+    if (!status) {
+      this.router.navigate(['auth/sign-in']);
+    }
     this.debitCards = [
       {
         id: '001',
