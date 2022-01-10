@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { DebitCardComponent } from './../components/debit-card/debit-card.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavbarComponent } from '../components/navbar/navbar.component';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { MDBBootstrapModule } from 'angular-bootstrap-md';
 // import { CarouselModule, WavesModule } from 'angular-bootstrap-md'
@@ -14,7 +13,6 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     DebitCardComponent,
-    NavbarComponent,
     SpinnerComponent
   ],
   imports: [
